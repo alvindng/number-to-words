@@ -139,39 +139,29 @@ class Fixnum
     trillions = []
 
     num = self
-    singles.push(num%1000)
+    singles = singles.push(num%1000)
     thousands.push((num/1000)%1000)
     millions.push((num/1000000)%1000)
     billions.push((num/1000000000)%1000)
     trillions.push((num/1000000000000)%1000)
 
-      trillions.each() do
         word += ones.key(trillions[0])
         word += tens.key(trillions[1])
         word += ones.key(trillions[2])
-      end
-      billions.each() do
-        word += ones.key(billion[0])
-        word += tens.key(billion[1])
-        word += ones.key(billion[2])
-      end
-      millions.each() do
-        word += ones.key(million[0])
-        word += tens.key(million[1])
-        word += ones.key(million[2])
-      end
-      thousands.each() do
+        word += ones.key(billions[0])
+        word += tens.key(billions[1])
+        word += ones.key(billions[2])
+        word += ones.key(millions[0])
+        word += tens.key(millions[1])
+        word += ones.key(millions[2])
         word += ones.key(thousands[0])
         word += tens.key(thousands[1])
         word += ones.key(thousands[2])
-      end
-      singles.each() do
         word += ones.key(singles[0])
         word += tens.key(singles[1])
         word += ones.key(singles[2])
-      end
     return word
   end
 end
 
-1234567890123
+111234567890123
